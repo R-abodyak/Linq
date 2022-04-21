@@ -1,0 +1,32 @@
+This is the Link of the question :
+https://www.codingame.com/playgrounds/213/using-c-linq---a-practical-overview/combined-exercise-2
+Note : I solve the question immediatly in the website "You can paste my solution there to test against  required test cases"
+/////////////////////////////////////////////////////////////////////////////////////////////////
+My solution : 
+
+using System.Linq;
+
+namespace AllTogether1
+{
+    public class FullExercise2
+    {
+        // Given a sequence of words, get rid of any that don't have the character 'e' in them,
+        // then sort the remaining words alphabetically, then return the following phrase using
+        // only the final word in the resulting sequence:
+        //    -> "The last word is <word>"
+        // If there are no words with the character 'e' in them, then return null.
+        //
+        // TRY to do it all using only LINQ statements. No loops or if statements.
+        public static string GetTheLastWord(IEnumerable<string> words)
+        {  
+            
+        
+            var q = words.Where( s =>s.Contains('e')).OrderBy(s=>s).LastOrDefault();
+            if (q==null) return null;
+            return "The last word is "+q;
+            
+           
+                
+        }
+    }
+}
