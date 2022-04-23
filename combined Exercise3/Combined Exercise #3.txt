@@ -1,0 +1,35 @@
+This is the Link of the question :
+https://www.codingame.com/playgrounds/345/c-linq-background-topics/exercise-implement-a-linq-method
+Note : I solve the question immediatly in the website "You can paste my solution there to test against  required test cases"
+/////////////////////////////////////////////////////////////////////////////////////////////////
+My solution : 
+using System.Collections.Generic;
+
+namespace Background1
+{
+    // Uncomment the TransformationFunction delegate declaration
+    //
+    // following the examples in the lessons, declare the type
+    // TransformationFunction as a delegate that takes a single
+    // int parameter and returns an int result.
+
+     public delegate int TransformationFunction (int input );
+
+    // Write the extension method (and containing class) here,
+    // following the examples in the lessons. The method should
+    // be called Transform(), extend IEnumerable<int>, take an
+    // extra parameter of type TransformationFunction, and
+    // return an IEnumerable<int>.
+
+     public static class MyExtension{
+
+      public static IEnumerable<int> Transform (this IEnumerable<int> src ,  TransformationFunction delVal)
+      {
+          foreach ( var i in src )
+          {
+          yield return  delVal(i);
+          }
+      }
+     }
+    
+}
